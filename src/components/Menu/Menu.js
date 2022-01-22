@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import "./Menu.css";
 
@@ -10,7 +11,9 @@ function Menu() {
       </h1>
       <div className="menu__element">
         <FontAwesomeIcon className="menu__arrow" icon="chevron-left" />
-        <p className="menu__goback">Go Back</p>
+        <Link to="/products">
+          <p className="menu__goback">Go Back</p>
+        </Link>
       </div>
     </header>
   );
