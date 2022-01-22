@@ -5,6 +5,7 @@ import { faChevronLeft, faFilter } from "@fortawesome/free-solid-svg-icons";
 import Menu from "./components/Menu/Menu";
 import IndexPage from "./pages/IndexPage/IndexPage";
 import initializeServer from "./server/index";
+import storylineData from "./server/storylineData.js";
 
 initializeServer();
 
@@ -14,7 +15,7 @@ function App() {
   return (
     <>
       <Menu />
-      <IndexPage />
+      <IndexPage productsList={storylineData} />
     </>
   );
 }

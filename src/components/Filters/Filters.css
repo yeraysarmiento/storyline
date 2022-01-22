@@ -15,9 +15,8 @@
 .filters__element:hover {
   color: black;
   font-weight: 500;
-}
-
-.filters__element:nth-child(1) {
-  color: black;
-  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #c2ddec;
+  text-underline-offset: 5px;
 }
