@@ -1,0 +1,13 @@
+.index-container {
+  position: absolute;
+  width: 100vw;
+  margin-top: 100px;
+  padding: 0 15px;
+}
+
+.title {
+  font-size: 18px;
+  font-family: "Futura", sans-serif;
+  font-weight: 500;
+  border-bottom: 1.5px solid black;
+}
