@@ -4,6 +4,9 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faChevronLeft, faFilter } from "@fortawesome/free-solid-svg-icons";
 import Menu from "./components/Menu/Menu";
 import IndexPage from "./pages/IndexPage/IndexPage";
+import initializeServer from "./server/index";
+
+initializeServer();
 
 library.add(fab, faChevronLeft, faFilter);
 
