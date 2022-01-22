@@ -2,15 +2,21 @@ import "./ProductPreview.css";
 
 function ProductPreview({ product }) {
   return (
-    <li className="product">
-      <img className="product__image" src={product.productImage} alt="" />
-      <section className="product__information">
-        <h3 className="product__description">{product.productDescription}</h3>
-        <div className="product__box">
-          <h4 className="product__price">
+    <li className="product-preview">
+      <img
+        className="product-preview__image"
+        src={product.productImage}
+        alt={product.productName}
+      />
+      <section className="product-preview__information">
+        <h3 className="product-preview__description">
+          {product.productDescription}
+        </h3>
+        <div className="product-preview__box">
+          <h4 className="product-preview__price">
             € {product.productPrice.toFixed(2)}
           </h4>
-          <p className="product__read-more">+</p>
+          <p className="product-preview__read-more">+</p>
         </div>
       </section>
     </li>
