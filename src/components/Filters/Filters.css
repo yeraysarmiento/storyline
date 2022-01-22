@@ -1,0 +1,23 @@
+.filters {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-family: "Karla", sans-serif;
+  color: grey;
+  margin-top: 15px;
+}
+
+.filters__element {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.filters__element:hover {
+  color: black;
+  font-weight: 500;
+}
+
+.filters__element:nth-child(1) {
+  color: black;
+  font-weight: 500;
+}
