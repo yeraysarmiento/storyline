@@ -4,11 +4,11 @@ import "./IndexPage.css";
 
 function IndexPage({ productsList }) {
   return (
-    <div className="index-container">
+    <main className="index-container">
       <h2 className="title">AVAILABLE PRODUCTS</h2>
       <Filters />
       <ProductsList productsList={productsList} />
-    </div>
+    </main>
   );
 }
 

@@ -11,7 +11,7 @@ function ProductsList({ productsList }) {
       </div>
       <ul className="products-list__container">
         {productsList.map((product) => (
-          <ProductPreview product={product} />
+          <ProductPreview product={product} key={product.id} />
         ))}
       </ul>
     </article>
