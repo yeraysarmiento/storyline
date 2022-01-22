@@ -1,5 +1,6 @@
 const productsList = [
   {
+    id: 1,
     productName: "Good ol' Dumbbells",
     productDescription:
       "This equipment helps you perform joint-isolation exercises such as biceps curls, chest flyes or shoulder raises. Using dumbbells for full-body, multiplanar movements, however, can provide a variety of different strength outcomes. It also offers many benefits for cardiorespiratory fitness and flexibility",
@@ -23,6 +24,7 @@ const productsList = [
     ],
   },
   {
+    id: 2,
     productName: "Evergrip Jump Rope",
     productDescription:
       "Did you know that for an average-sized person, jumping rope might even burn more than 10 calories a minute. In just 30 minute jump rope sessions a day, you can build the figure you want. Jumping rope also helps with:\n- tone your calves.\n- tighten your core.\n- improve your lung capacity.\n- build stamina.",
@@ -46,6 +48,7 @@ const productsList = [
     ],
   },
   {
+    id: 3,
     productName: "Durable Resistance band",
     productDescription:
       "Rubbery, elastic bands that you can use to strengthen your muscles at home. Resistance training is any type of exercise that uses resistance or weight to build strength in your muscles. Working out with resistance bands is one option for resistance training that allows you to work out at home using just one piece of equipment.",
