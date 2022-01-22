@@ -1,0 +1,31 @@
+.product {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 180px;
+  row-gap: 15px;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+
+.product__box {
+  display: flex;
+  align-items: flex-end;
+}
+
+.product__image {
+  height: 180px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.product__description {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+}
+
+.product__price {
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 15px;
+}
