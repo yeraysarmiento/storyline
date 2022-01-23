@@ -30,16 +30,21 @@ function App() {
   }, [getProducts]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/products" />} />
-      <Route path="/products" element={<IndexPage productsList={products} />} />
-      <Route
-        path="/products/:idProduct"
-        element={<ReadPage productsList={products} />}
-      />
-      <Route path="/products/edit" element={<FormPage />} />
-      <Route path="/products/new" element={<FormPage />} />
-    </Routes>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Navigate to="/products" />} />
+        <Route
+          path="/products"
+          element={<IndexPage productsList={products} />}
+        />
+        <Route
+          path="/products/:idProduct"
+          element={<ReadPage productsList={products} />}
+        />
+        <Route path="/products/edit" element={<FormPage />} />
+        <Route path="/products/new" element={<FormPage />} />
+      </Routes>
+    </div>
   );
 }
 
