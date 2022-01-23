@@ -36,7 +36,7 @@ function Ad({ product, ad, onModal }) {
       <img
         className="fb-ad__image"
         src={ad.image}
-        alt={`An ad of${product.productName}`}
+        alt={`An ad of ${product.productName}`}
       />
       <div className="fb-ad__footer">
         <h2 className="fb-ad__product-name">{ad.heading.toUpperCase()}</h2>

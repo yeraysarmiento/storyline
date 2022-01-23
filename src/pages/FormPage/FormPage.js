@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import { v4 as uuidv4 } from "uuid";
 import "./FormPage.css";
