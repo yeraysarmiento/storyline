@@ -31,6 +31,8 @@
 
 .menu__goback {
   font-weight: bold;
+  border: none;
+  background-color: none;
 }
 
 .menu__goback:hover {
