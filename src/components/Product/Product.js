@@ -9,7 +9,9 @@ function Product({ product }) {
           src={product.productImage}
           alt={product.productName}
         />
-        <p className="product__price">€ {product.productPrice.toFixed(2)}</p>
+        <p className="product__price">
+          Price: € {product.productPrice.toFixed(2)}
+        </p>
       </div>
       <p className="product__description">{product.productDescription}</p>
     </article>

@@ -6,15 +6,16 @@ import "./Menu.css";
 function Menu() {
   let { pathname } = useLocation();
 
+  console.log(pathname);
+
   return (
     <header className="menu">
       <h1 className="heading">
         <img src={logo} alt="Logo of Storyline Shop" width="36" height="36" />
       </h1>
-      {!pathname === "/products" && (
+      {pathname !== "/products" && (
         <div className="menu__element">
           <FontAwesomeIcon className="menu__arrow" icon="chevron-left" />
-
           <Link to="/products">
             <p className="menu__goback">Go Back</p>
           </Link>
