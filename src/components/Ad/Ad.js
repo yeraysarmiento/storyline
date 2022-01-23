@@ -1,11 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "../../assets/img/logo.png";
-import useProducts from "../../hooks/useProducts";
 import "./Ad.css";
 
-function Ad({ product, ad }) {
-  const { deleteAd } = useProducts();
-
+function Ad({ product, ad, onModal }) {
   return (
     <li className="fb-ad">
       <div className="fb-ad__header">
@@ -23,7 +20,7 @@ function Ad({ product, ad }) {
         <FontAwesomeIcon
           className="fb-ad__delete"
           icon="times"
-          onClick={() => deleteAd(ad.id, product.id)}
+          onClick={() => onModal(ad.id, product.id)}
         />
       </div>
       <img
