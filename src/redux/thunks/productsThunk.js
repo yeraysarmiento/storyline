@@ -1,5 +1,5 @@
 import axios from "axios";
-import { deleteAdAction, getProductsAction } from "../actions/actionCreators";
+import { getProductsAction } from "../actions/actionCreators";
 
 export const getProductsThunk = () => async (dispatch) => {
   const {
@@ -8,9 +8,9 @@ export const getProductsThunk = () => async (dispatch) => {
   dispatch(getProductsAction(productsList));
 };
 
-export const deleteAdThunk = (idAd, idProduct) => async (dispatch) => {
-  await axios.delete(
-    `http://localhost:4000/ad/delete/${idAd}?idproduct=${idProduct}`
-  );
-  dispatch(deleteAdAction(idAd, idProduct));
-};
+// export const deleteAdThunk = (idAd, idProduct) => async (dispatch) => {
+//   await axios.delete(
+//     `http://localhost:4000/ad/delete/${idAd}?idproduct=${idProduct}`
+//   );
+//   dispatch(deleteAdAction(idAd, idProduct));
+// };

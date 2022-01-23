@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteAdThunk, getProductsThunk } from "../redux/thunks/productsThunk";
+import { deleteAdAction } from "../redux/actions/actionCreators";
+import { getProductsThunk } from "../redux/thunks/productsThunk";
 
 const useProducts = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const useProducts = () => {
   }, [dispatch]);
 
   const deleteAd = (idAd, idProduct) => {
-    dispatch(deleteAdThunk(idAd, idProduct));
+    dispatch(deleteAdAction(idAd, idProduct));
   };
 
   return {
