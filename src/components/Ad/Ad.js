@@ -1,8 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "../../assets/img/logo.png";
+import useCurrentProduct from "../../hooks/useCurrentProduct";
 import "./Ad.css";
 
 function Ad({ productName, ad }) {
+  const { deleteAd } = useCurrentProduct();
+
   return (
     <li className="fb-ad">
       <div className="fb-ad__header">
@@ -17,7 +20,11 @@ function Ad({ productName, ad }) {
           <h3 className="fb-ad__title">Storyline</h3>
           <p className="fb-ad__subtitle">Your online Sports Goods Shop</p>
         </div>
-        <FontAwesomeIcon className="fb-ad__delete" icon="times" />
+        <FontAwesomeIcon
+          className="fb-ad__delete"
+          icon="times"
+          onClick={() => deleteAd(ad.id)}
+        />
       </div>
       <img
         className="fb-ad__image"

@@ -5,9 +5,15 @@ import "./IndexPage.css";
 function IndexPage({ productsList }) {
   return (
     <main className="index-container">
-      <h2 className="title">AVAILABLE PRODUCTS</h2>
-      <Filters />
-      <ProductsList productsList={productsList} />
+      {!productsList.length ? (
+        <h3>Loading...</h3>
+      ) : (
+        <>
+          <h2 className="title">AVAILABLE PRODUCTS</h2>
+          <Filters />
+          <ProductsList productsList={productsList} />
+        </>
+      )}
     </main>
   );
 }

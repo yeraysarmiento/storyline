@@ -5,6 +5,11 @@ export const getProductsAction = (products) => ({
   products,
 });
 
+export const loadCurrentProductAction = (product) => ({
+  type: actionTypes.loadCurrentProduct,
+  product,
+});
+
 export const createAdAction = (ad) => ({
   type: actionTypes.createAd,
   ad,

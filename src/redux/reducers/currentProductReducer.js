@@ -4,6 +4,9 @@ const currentProductReducer = (product = {}, action = {}) => {
   let currentProduct;
 
   switch (action.type) {
+    case actionTypes.loadCurrentProduct:
+      currentProduct = action.product;
+      break;
     case actionTypes.createAd:
       currentProduct.ads = [...currentProduct.ads, action.ad];
       break;

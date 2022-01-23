@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import useCurrentProduct from "../../hooks/useCurrentProduct";
 import "./ProductPreview.css";
 
 function ProductPreview({ product }) {
+  const { loadCurrentProduct } = useCurrentProduct();
+
   return (
     <li className="product-preview">
       <img
@@ -17,9 +20,12 @@ function ProductPreview({ product }) {
           <h4 className="product-preview__price">
             € {product.productPrice.toFixed(2)}
           </h4>
-          <p className="product-preview__read-more">
+          <button
+            className="product-preview__read-more"
+            onClick={() => loadCurrentProduct(product)}
+          >
             <Link to={`${product.id}`}>+</Link>
-          </p>
+          </button>
         </div>
       </section>
     </li>
