@@ -9,7 +9,7 @@ const currentProductReducer = (product = {}, action = {}) => {
       break;
     case actionTypes.deleteAd:
       currentProduct.ads = [
-        ...currentProduct.ads.filter((ad) => ad.heading !== action.ad.heading),
+        ...currentProduct.ads.filter((ad) => ad.id !== action.idAd),
       ];
       break;
     case actionTypes.updateAd:
