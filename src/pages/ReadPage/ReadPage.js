@@ -5,14 +5,12 @@ import "./ReadPage.css";
 import { useState } from "react";
 import useProducts from "../../hooks/useProducts";
 import Modal from "../../components/Modal/Modal";
-import useCurrentAd from "../../hooks/useCurrentAd";
 
 function ReadPage({ productsList }) {
   let navigate = useNavigate();
   const [isDeleting, setIsDeleting] = useState(false);
   const [deleteData, setDeleteData] = useState("");
   const { deleteAd } = useProducts();
-  const { deleteCurrentAd } = useCurrentAd();
   const { idProduct } = useParams();
 
   const [currentProduct] = productsList.filter(

@@ -22,3 +22,8 @@ button {
   border: none;
   background: none;
 }
+
+main,
+header {
+  max-width: 600px;
+}
