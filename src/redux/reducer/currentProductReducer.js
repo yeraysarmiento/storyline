@@ -1,6 +1,6 @@
 import actionTypes from "../actions/actionTypes";
 
-const currentProductReducer = (currentProduct = {}, action = {}) => {
+const currentProductReducer = (product = {}, action = {}) => {
   let currentProduct;
 
   switch (action.type) {
@@ -20,10 +20,10 @@ const currentProductReducer = (currentProduct = {}, action = {}) => {
       ];
       break;
     default:
-      currentProduct = currentProduct;
+      currentProduct = product;
   }
 
-  return productsList;
+  return currentProduct;
 };
 
 export default currentProductReducer;
