@@ -33,11 +33,7 @@ function ReadPage({ productsList }) {
               </li>
             </Link>
             {currentProduct.ads.map((ad) => (
-              <Ad
-                ad={ad}
-                productName={currentProduct.productName}
-                key={ad.id}
-              />
+              <Ad ad={ad} product={currentProduct} key={ad.id} />
             ))}
           </ul>
         </>
