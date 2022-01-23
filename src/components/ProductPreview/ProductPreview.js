@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./ProductPreview.css";
 
 function ProductPreview({ product }) {
@@ -16,7 +17,9 @@ function ProductPreview({ product }) {
           <h4 className="product-preview__price">
             € {product.productPrice.toFixed(2)}
           </h4>
-          <p className="product-preview__read-more">+</p>
+          <p className="product-preview__read-more">
+            <Link to={`${product.id}`}>+</Link>
+          </p>
         </div>
       </section>
     </li>
