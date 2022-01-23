@@ -10,16 +10,18 @@ const productsList = [
     productCategory: "Fitness",
     ads: [
       {
+        id: 1,
         heading: "Heading 1",
         image:
           "https://res.cloudinary.com/dyiuxe5fa/image/upload/v1626282482/coding-challenge/wp3699391.jpg",
-        description: "",
+        description: "This is an ad about de product 1",
       },
       {
+        id: 2,
         heading: "Heading 2",
         image:
           "https://res.cloudinary.com/dyiuxe5fa/image/upload/v1626282482/coding-challenge/wp3699391.jpg",
-        description: "",
+        description: "This is another ad about de product 1",
       },
     ],
   },
@@ -34,16 +36,11 @@ const productsList = [
     productCategory: "Biking",
     ads: [
       {
+        id: 1,
         heading: "Heading 1",
         image:
           "https://res.cloudinary.com/dyiuxe5fa/image/upload/v1626333092/coding-challenge/rope.jpg",
-        description: "",
-      },
-      {
-        heading: "Heading 2",
-        image:
-          "https://res.cloudinary.com/dyiuxe5fa/image/upload/v1626333092/coding-challenge/rope.jpg",
-        description: "",
+        description: "This is an ad about de product 2",
       },
     ],
   },
@@ -58,16 +55,11 @@ const productsList = [
     productCategory: "Fitness",
     ads: [
       {
+        id: 1,
         heading: "Heading 1",
         image:
           "https://res.cloudinary.com/dyiuxe5fa/image/upload/v1626332994/coding-challenge/resistance.jpg",
-        description: "",
-      },
-      {
-        heading: "Heading 2",
-        image:
-          "https://res.cloudinary.com/dyiuxe5fa/image/upload/v1626332994/coding-challenge/resistance.jpg",
-        description: "",
+        description: "This is an ad about de product 3",
       },
     ],
   },
