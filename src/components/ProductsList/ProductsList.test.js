@@ -3,10 +3,14 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import ProductsList from "./ProductsList";
 import { BrowserRouter } from "react-router-dom";
+import configureStore from "../../redux/store/store";
+import { Provider } from "react-redux";
 
 library.add(faFilter);
 
 describe("Given an ProductsList component", () => {
+  const store = configureStore();
+
   describe("When it is invoked with a list of products", () => {
     test("Then it should render as many <li> as elements in the list", () => {
       const productsList = [
@@ -77,9 +81,11 @@ describe("Given an ProductsList component", () => {
       ];
 
       render(
-        <BrowserRouter>
-          <ProductsList productsList={productsList} />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <ProductsList productsList={productsList} />
+          </BrowserRouter>
+        </Provider>
       );
 
       const products = screen.getAllByRole("listitem");
