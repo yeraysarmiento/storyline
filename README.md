@@ -22,3 +22,7 @@ Runs de app in port 3000.
 
 Due the lack of time I focused on 3 test Components, to show how to implement unit testing regarding to rendering and userEvents.
 Tested with JEST using testing-library.
+
+### Figma layout
+
+<img width="1105" alt="Storyline layout" src="https://user-images.githubusercontent.com/26439964/150689946-e5d929ca-d6e2-42c8-89f8-1d89df7a42b0.png">
