@@ -10,9 +10,10 @@ export const loadCurrentProductAction = (product) => ({
   product,
 });
 
-export const createAdAction = (ad) => ({
+export const createAdAction = (ad, idProduct) => ({
   type: actionTypes.createAd,
   ad,
+  idProduct,
 });
 
 export const deleteAdAction = (idAd, idProduct) => ({

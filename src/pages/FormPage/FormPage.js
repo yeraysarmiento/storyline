@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import useProducts from "../../hooks/useProducts";
 import "./FormPage.css";
 
 function FormPage({ isEditing }) {
@@ -8,15 +11,24 @@ function FormPage({ isEditing }) {
     image: "",
   };
 
+  const { currentProduct } = useSelector((store) => store);
+  let navigate = useNavigate();
+  const { createAd } = useProducts();
   const [ad, setAd] = useState(adData);
   const [isDisabled, setIsDisabled] = useState(true);
 
-  const onSubmit = () => {};
+  const onSubmit = (event) => {
+    event.preventDefault();
+    createAd(ad, currentProduct.id);
+    navigate(-1);
+  };
+
   const onChange = (event) => {
     setAd({
       ...ad,
       [event.target.id]: event.target.value,
     });
+
     if (ad.heading !== "" && ad.description !== "") {
       setIsDisabled(false);
     }
@@ -24,7 +36,9 @@ function FormPage({ isEditing }) {
 
   return (
     <main className="read-container">
-      <h2 className="title">{isEditing ? "EDIT" : "CREATE"}</h2>
+      <h2 className="title">
+        {isEditing ? "EDIT" : `CREATE NEW AD FOR ${currentProduct.productName}`}
+      </h2>
 
       <form className="form" noValidate autoComplete="off" onSubmit={onSubmit}>
         <label htmlFor="heading">Heading</label>

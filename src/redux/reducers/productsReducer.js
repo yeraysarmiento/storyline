@@ -7,9 +7,15 @@ const productsReducer = (products = [], action = {}) => {
     case actionTypes.getProducts:
       productsList = action.products;
       break;
-    // case actionTypes.createAd:
-    //   currentProduct.ads = [...currentProduct.ads, action.ad];
-    //   break;
+    case actionTypes.createAd:
+      productsList = [
+        ...products.map((product) =>
+          product.id === action.idProduct
+            ? { ...product, ads: [...product.ads, action.ad] }
+            : product
+        ),
+      ];
+      break;
     case actionTypes.deleteAd:
       productsList = [
         ...products.map((product) =>

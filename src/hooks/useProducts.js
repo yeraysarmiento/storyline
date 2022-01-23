@@ -1,6 +1,9 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteAdAction } from "../redux/actions/actionCreators";
+import {
+  createAdAction,
+  deleteAdAction,
+} from "../redux/actions/actionCreators";
 import { getProductsThunk } from "../redux/thunks/productsThunk";
 
 const useProducts = () => {
@@ -15,10 +18,15 @@ const useProducts = () => {
     dispatch(deleteAdAction(idAd, idProduct));
   };
 
+  const createAd = (ad, idProduct) => {
+    dispatch(createAdAction(ad, idProduct));
+  };
+
   return {
     productsList,
     getProducts,
     deleteAd,
+    createAd,
   };
 };
 
