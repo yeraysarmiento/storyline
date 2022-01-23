@@ -7,15 +7,12 @@ import {
   faEdit,
 } from "@fortawesome/free-solid-svg-icons";
 import IndexPage from "./pages/IndexPage/IndexPage";
-import initializeServer from "./server/index";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import ReadPage from "./pages/ReadPage/ReadPage";
 import useProducts from "./hooks/useProducts";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import FormPage from "./pages/FormPage/FormPage";
-
-initializeServer();
 
 library.add(faChevronLeft, faFilter, faTimes, faEdit);
 
