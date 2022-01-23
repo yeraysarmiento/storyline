@@ -20,6 +20,7 @@ function App() {
   const { products } = useSelector((store) => store);
 
   const location = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -36,8 +37,8 @@ function App() {
         path="/products/:idProduct"
         element={<ReadPage productsList={products} />}
       />
-      <Route path="/products/new" element={<FormPage />} />
       <Route path="/products/edit" element={<FormPage />} />
+      <Route path="/products/new" element={<FormPage />} />
     </Routes>
   );
 }

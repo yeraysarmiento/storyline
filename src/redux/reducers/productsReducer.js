@@ -28,13 +28,22 @@ const productsReducer = (products = [], action = {}) => {
         ),
       ];
       break;
-    // case actionTypes.updateAd:
-    //   currentProduct.ads = [
-    //     ...currentProduct.ads.filter((ad) =>
-    //       ad.heading === action.ad.heading ? action.ad : ad
-    //     ),
-    //   ];
-    //   break;
+    case actionTypes.updateAd:
+      productsList = [
+        ...products.map((product) =>
+          product.id === action.idProduct
+            ? {
+                ...product,
+                ads: [
+                  ...product.ads.map((ad) =>
+                    ad.id === action.idAd ? { ...action.ad } : ad
+                  ),
+                ],
+              }
+            : product
+        ),
+      ];
+      break;
     default:
       productsList = products;
   }

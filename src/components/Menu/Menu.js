@@ -1,11 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
+import useCurrentAd from "../../hooks/useCurrentAd";
 import "./Menu.css";
 
 function Menu() {
   let { pathname } = useLocation();
   const navigate = useNavigate();
+  const { deleteCurrentAd } = useCurrentAd();
+
+  const onClick = () => {
+    deleteCurrentAd();
+    navigate(-1);
+  };
 
   return (
     <header className="menu">
@@ -17,7 +24,7 @@ function Menu() {
       {pathname !== "/products" && (
         <div className="menu__element">
           <FontAwesomeIcon className="menu__arrow" icon="chevron-left" />
-          <button onClick={() => navigate(-1)} className="menu__goback">
+          <button onClick={() => onClick()} className="menu__goback">
             Go Back
           </button>
         </div>

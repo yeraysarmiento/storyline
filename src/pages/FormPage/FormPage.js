@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import { v4 as uuidv4 } from "uuid";
 import "./FormPage.css";
+import useCurrentAd from "../../hooks/useCurrentAd";
 
-function FormPage({ isEditing }) {
+function FormPage() {
   const adData = {
     id: uuidv4(),
     heading: "",
@@ -13,17 +14,22 @@ function FormPage({ isEditing }) {
     image: "",
   };
 
-  const { currentProduct } = useSelector((store) => store);
+  const { currentProduct, currentAd } = useSelector((store) => store);
+  const { deleteCurrentAd } = useCurrentAd();
   let navigate = useNavigate();
-  const { createAd } = useProducts();
-  const [ad, setAd] = useState(adData);
+  const { createAd, updateAd } = useProducts();
+  const [ad, setAd] = useState(currentAd.id ? currentAd : adData);
   const [isDisabled, setIsDisabled] = useState(true);
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(ad);
-    createAd(ad, currentProduct.id);
+
+    currentAd.id
+      ? updateAd(ad, currentProduct.id)
+      : createAd(ad, currentProduct.id);
+
     navigate(-1);
+    deleteCurrentAd();
   };
 
   const onChange = (event) => {
@@ -37,10 +43,17 @@ function FormPage({ isEditing }) {
     }
   };
 
+  const onReset = () => {
+    currentAd.id ? setAd(currentAd) : setAd(adData);
+    currentAd.id ? setIsDisabled(false) : setIsDisabled(true);
+  };
+
   return (
     <main className="read-container">
       <h2 className="title">
-        {isEditing ? "EDIT" : `CREATE NEW AD FOR ${currentProduct.productName}`}
+        {currentAd.id
+          ? `EDITING ${currentAd.heading} AD`
+          : `CREATE NEW AD FOR ${currentProduct.productName}`}
       </h2>
 
       <form className="form" noValidate autoComplete="off" onSubmit={onSubmit}>
@@ -72,11 +85,11 @@ function FormPage({ isEditing }) {
         />
 
         <div className="form__box">
-          <button className="reset" type="button">
+          <button className="reset" type="button" onClick={() => onReset()}>
             Reset
           </button>
           <button className="submit" disabled={isDisabled} type="submit">
-            {isEditing ? "Save changes" : "Submit"}
+            {currentAd.id ? "Save changes" : "Submit"}
           </button>
         </div>
       </form>
