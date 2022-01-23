@@ -2,10 +2,12 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
+import { v4 as uuidv4 } from "uuid";
 import "./FormPage.css";
 
 function FormPage({ isEditing }) {
   const adData = {
+    id: uuidv4(),
     heading: "",
     description: "",
     image: "",
@@ -19,6 +21,7 @@ function FormPage({ isEditing }) {
 
   const onSubmit = (event) => {
     event.preventDefault();
+    console.log(ad);
     createAd(ad, currentProduct.id);
     navigate(-1);
   };
