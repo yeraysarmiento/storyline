@@ -13,6 +13,7 @@ import ReadPage from "./pages/ReadPage/ReadPage";
 import useProducts from "./hooks/useProducts";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import FormPage from "./pages/FormPage/FormPage";
 
 initializeServer();
 
@@ -39,6 +40,8 @@ function App() {
         path="/products/:idProduct"
         element={<ReadPage productsList={products} />}
       />
+      <Route path="/products/new" element={<FormPage />} />
+      <Route path="/products/edit" element={<FormPage />} />
     </Routes>
   );
 }
