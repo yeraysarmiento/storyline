@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { loadCurrentAdAction } from "../redux/actions/actionCreators";
+import {
+  deleteCurrentAdAction,
+  loadCurrentAdAction,
+} from "../redux/actions/actionCreators";
 
 const useCurrentAd = () => {
   const dispatch = useDispatch();
@@ -9,9 +12,14 @@ const useCurrentAd = () => {
     dispatch(loadCurrentAdAction(ad));
   };
 
+  const deleteCurrentAd = () => {
+    dispatch(deleteCurrentAdAction());
+  };
+
   return {
     currentAd,
     loadCurrentAd,
+    deleteCurrentAd,
   };
 };
 

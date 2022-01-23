@@ -32,3 +32,7 @@ export const loadCurrentAdAction = (ad) => ({
   type: actionTypes.loadCurrentAd,
   ad,
 });
+
+export const deleteCurrentAdAction = () => ({
+  type: actionTypes.deleteCurrentAd,
+});

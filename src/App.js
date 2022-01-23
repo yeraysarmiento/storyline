@@ -20,6 +20,7 @@ function App() {
   const { products } = useSelector((store) => store);
 
   const location = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);

@@ -7,6 +7,9 @@ const currentAdReducer = (ad = {}, action = {}) => {
     case actionTypes.loadCurrentAd:
       currentAd = action.ad;
       break;
+    case actionTypes.deleteCurrentAd:
+      currentAd = {};
+      break;
     default:
       currentAd = ad;
   }

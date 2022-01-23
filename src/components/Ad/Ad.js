@@ -39,9 +39,7 @@ function Ad({ product, ad, onModal }) {
         alt={`An ad of${product.productName}`}
       />
       <div className="fb-ad__footer">
-        <h2 className="fb-ad__product-name">
-          {product.productName.toUpperCase()}
-        </h2>
+        <h2 className="fb-ad__product-name">{ad.heading.toUpperCase()}</h2>
         <p className="fb-ad__description">{ad.description}</p>
         <div className="fb-ad__action">
           <FontAwesomeIcon

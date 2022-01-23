@@ -5,6 +5,7 @@ const actionTypes = {
   deleteAd: "DELETE_AD",
   updateAd: "UPDATE_AD",
   loadCurrentAd: "LOAD_CURRENT_AD",
+  deleteCurrentAd: "DELETE_CURRENT_AD",
 };
 
 export default actionTypes;

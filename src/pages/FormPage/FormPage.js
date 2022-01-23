@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import { v4 as uuidv4 } from "uuid";
 import "./FormPage.css";
+import useCurrentAd from "../../hooks/useCurrentAd";
 
 function FormPage() {
   const adData = {
@@ -14,16 +15,21 @@ function FormPage() {
   };
 
   const { currentProduct, currentAd } = useSelector((store) => store);
+  const { deleteCurrentAd } = useCurrentAd();
   let navigate = useNavigate();
-  const { createAd } = useProducts();
+  const { createAd, updateAd } = useProducts();
   const [ad, setAd] = useState(currentAd.id ? currentAd : adData);
   const [isDisabled, setIsDisabled] = useState(true);
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(ad);
-    createAd(ad, currentProduct.id);
+
+    currentAd.id
+      ? updateAd(ad, currentProduct.id)
+      : createAd(ad, currentProduct.id);
+
     navigate(-1);
+    deleteCurrentAd();
   };
 
   const onChange = (event) => {
@@ -46,8 +52,8 @@ function FormPage() {
     <main className="read-container">
       <h2 className="title">
         {currentAd.id
-          ? `EDITING ${currentAd.heading.toUpperCase()} AD`
-          : `CREATE NEW AD FOR ${currentProduct.productName.toUpperCase()}`}
+          ? `EDITING ${currentAd.heading} AD`
+          : `CREATE NEW AD FOR ${currentProduct.productName}`}
       </h2>
 
       <form className="form" noValidate autoComplete="off" onSubmit={onSubmit}>
