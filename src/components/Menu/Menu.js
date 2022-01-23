@@ -6,8 +6,6 @@ import "./Menu.css";
 function Menu() {
   let { pathname } = useLocation();
 
-  console.log(pathname);
-
   return (
     <header className="menu">
       <h1 className="heading">
