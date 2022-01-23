@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   createAdAction,
   deleteAdAction,
+  updateAdAction,
 } from "../redux/actions/actionCreators";
 import { getProductsThunk } from "../redux/thunks/productsThunk";
 
@@ -22,11 +23,16 @@ const useProducts = () => {
     dispatch(createAdAction(ad, idProduct));
   };
 
+  const updateAd = (ad, idProduct) => {
+    dispatch(updateAdAction(ad, idProduct));
+  };
+
   return {
     productsList,
     getProducts,
     deleteAd,
     createAd,
+    updateAd,
   };
 };
 

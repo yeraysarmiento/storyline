@@ -22,7 +22,8 @@ export const deleteAdAction = (idAd, idProduct) => ({
   idProduct,
 });
 
-export const updateAdAction = (ad) => ({
+export const updateAdAction = (ad, idProduct) => ({
   type: actionTypes.updateAd,
   ad,
+  idProduct,
 });
