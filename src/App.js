@@ -36,8 +36,8 @@ function App() {
         path="/products/:idProduct"
         element={<ReadPage productsList={products} />}
       />
-      <Route path="/products/new" element={<FormPage />} />
       <Route path="/products/edit" element={<FormPage />} />
+      <Route path="/products/new" element={<FormPage />} />
     </Routes>
   );
 }

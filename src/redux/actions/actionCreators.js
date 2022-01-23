@@ -27,3 +27,8 @@ export const updateAdAction = (ad, idProduct) => ({
   ad,
   idProduct,
 });
+
+export const loadCurrentAdAction = (ad) => ({
+  type: actionTypes.loadCurrentAd,
+  ad,
+});
