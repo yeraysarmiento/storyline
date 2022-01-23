@@ -1,6 +1,5 @@
 import "./App.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
   faChevronLeft,
   faFilter,
@@ -17,7 +16,7 @@ import { useEffect } from "react";
 
 initializeServer();
 
-library.add(fab, faChevronLeft, faFilter, faTimes, faEdit);
+library.add(faChevronLeft, faFilter, faTimes, faEdit);
 
 function App() {
   const location = useLocation();
